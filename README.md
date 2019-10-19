@@ -13,7 +13,7 @@ go get https://github.com/pitw/boll-kaspersky-subscriptions-parser
 
 ```go
 func main() {
-	subscriptions, err := subscriptionparser.ParseSubscription("myuser", "mypsupersecretpassword")
+	subscriptions, err := subscriptionparser.ParseSubscriptions("myuser", "mypsupersecretpassword")
 
 	if (err != nil) {
 		fmt.Print(err)
