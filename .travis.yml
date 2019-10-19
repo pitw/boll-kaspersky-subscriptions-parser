@@ -16,6 +16,8 @@ install:
   - go get github.com/mitchellh/gox
   - go get github.com/tcnksm/ghr
 before_script:
+  - env GO111MODULE=on go build
+  - env GO111MODULE=on go test
   - go build ./cmd/subscription/
 script:
   - ./test-coverage.sh
