@@ -9,6 +9,7 @@ before_install:
   - chmod +x $GOPATH/bin/dep
   # Setup test coveragae
   - chmod +x test-coverage.sh
+  - env GO111MODULE=on
   - go get -t -v ./...
 install:
   # Install tools for auto build and release
@@ -16,8 +17,6 @@ install:
   - go get github.com/mitchellh/gox
   - go get github.com/tcnksm/ghr
 before_script:
-  - env GO111MODULE=on go build
-  - env GO111MODULE=on go test
   - go build ./cmd/subscription/
 script:
   - ./test-coverage.sh
