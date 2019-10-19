@@ -7,5 +7,5 @@ FROM scratch
 COPY --from=build /etc/ssl/certs/ca-certificates.crt \
 /etc/ssl/certs/ca-certificates.crt
 
-COPY boll-kaspersky-subscriptions /subscriptions
+COPY subscription /subscriptions
 CMD ["./subscriptions"]

@@ -8,8 +8,8 @@ export VERSION=$(cat .version)
 #Set CGO_ENABLED to 0 so no all libs are static
 env CGO_ENABLED=0 gox -parallel 4 -osarch="linux/amd64 darwin/amd64 linux/arm windows/amd64" -ldflags="-s -w -X main.SRVERSION=$VERSION" -output="bin/{{.Dir}}_v"$VERSION"_{{.OS}}_{{.Arch}}" ./cmd/subscription/
 mkdir docker
-cp bin/boll-kaspersky-subscriptions_v"$VERSION"_linux_amd64 docker/boll-kaspersky-subscriptions
-chmod +x docker/boll-kaspersky-subscriptions
+cp bin/subscription_v"$VERSION"_linux_amd64 docker/subscription
+chmod +x docker/subscription
 ghr $(cat .ghr) bin/
 
 # docker build
