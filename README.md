@@ -30,3 +30,13 @@ func main() {
 	fmt.Print(subscriptions)
 }
 ```
+
+
+## CLI
+
+Also included is a small CLI for getting subscriptions
+directly as:
+
+- CSV
+- JSON
+- XLS
