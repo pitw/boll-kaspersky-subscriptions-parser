@@ -31,30 +31,42 @@ func main() {
 		fmt.Println("Username is mandatory")
 	} else {
 		if clientid > 0 {
-			WriteSubscriptionClientCSV(username, password, filename, clientid)
-		} else {
-			err := WriteSubscriptionsCSV(username, password, filename)
-			if err != nil {
-				fmt.Println(err)
+			switch format {
+			case "json":
+				WriteSubscriptionClientJSON(username, password, filename, clientid)
+			case "csv":
+				WriteSubscriptionClientCSV(username, password, filename, clientid)
+			default:
+				WriteSubscriptionClientCSV(username, password, filename, clientid)
 			}
+		} else {
+
+			switch format {
+			case "json":
+				WriteSubscriptionsJSON(username, password, filename)
+			case "csv":
+				WriteSubscriptionsCSV(username, password, filename)
+			default:
+				WriteSubscriptionsCSV(username, password, filename)
+			}
+
 		}
 	}
 
 }
 
 // WriteSubscriptionsCSV parses a all Boll Kaspersky Subscription to CSV
-func WriteSubscriptionsCSV(username string, password string, filename string) (err error) {
+func WriteSubscriptionsCSV(username string, password string, filename string) {
 	subsc, err := subscriptionparser.ParseSubscriptions(username, password)
 	if err != nil {
-		return err
+		fmt.Println(err)
 	}
 	err = subscriptionparser.WriteCSV(subsc, filename)
 	if err != nil {
-		return err
+		fmt.Println(err)
 	} else {
 		fmt.Printf("CSV written to %v", filename)
 	}
-	return err
 }
 
 // WriteSubscriptionCSV parses a all Boll Kaspersky Subscription to CSV
@@ -68,5 +80,34 @@ func WriteSubscriptionClientCSV(username string, password string, filename strin
 		fmt.Println(err)
 	} else {
 		fmt.Printf("CSV written to %v", filename)
+	}
+}
+
+// WriteSubscriptionsJSON parses a all Boll Kaspersky Subscription to CSV
+func WriteSubscriptionsJSON(username string, password string, filename string) (err error) {
+	subsc, err := subscriptionparser.ParseSubscriptions(username, password)
+	if err != nil {
+		return err
+	}
+	err = subscriptionparser.WriteJSON(subsc, filename)
+	if err != nil {
+		return err
+	} else {
+		fmt.Printf("JSON written to %v", filename)
+	}
+	return err
+}
+
+// WriteSubscriptionClientJSON parses a all Boll Kaspersky Subscription to CSV
+func WriteSubscriptionClientJSON(username string, password string, filename string, clientid int) {
+	subsc, err := subscriptionparser.ParseSubscriptionClient(username, password, clientid)
+	if err != nil {
+		fmt.Println(err)
+	}
+	err = subscriptionparser.WriteJSON(subsc, filename)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Printf("JSON written to %v", filename)
 	}
 }
