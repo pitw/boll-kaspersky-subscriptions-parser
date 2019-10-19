@@ -22,6 +22,7 @@ func main() {
 	flag.BoolVar(&version, "version", false, "Shows version")
 	flag.IntVar(&clientid, "client", 0, "ID of Subscription - Client")
 
+	// Parse all flags
 	flag.Parse()
 
 	if password == "" {
