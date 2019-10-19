@@ -11,6 +11,7 @@ func main() {
 	var username string
 	var password string
 	var clientid int
+
 	flag.StringVar(&filename, "filename", "KasperksySubscriptions", "Name of exported CSV (without ending)")
 	flag.StringVar(&username, "username", "", "Username for Boll.ch")
 	flag.StringVar(&password, "password", "", "Password for Boll.ch")
