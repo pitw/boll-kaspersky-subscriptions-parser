@@ -6,8 +6,18 @@ import (
 	"strconv"
 )
 
-// ParseSubscription parses Boll Kaspersky Subscription Table
-func ParseSubscription(username string, password string) (subscriptions []Subscriptions, err error) {
+// ParseSubscriptions parses all Boll Kaspersky Subscriptions
+func ParseSubscriptions(username string, password string) (subscriptions []Subscriptions, err error) {
+	return parseSubscriptionPage(username, password, previewURL)
+}
+
+// ParseSubscriptionClient parses a specific Boll Kaspersky Client Subscription
+func ParseSubscriptionClient(username string, password string, id int) (subscriptions []Subscriptions, err error) {
+	return parseSubscriptionPage(username, password, previewURLClient+strconv.Itoa(id))
+}
+
+// parseSubscriptionPage parses Boll Kaspersky Subscription Tables
+func parseSubscriptionPage(username string, password string, url string) (subscriptions []Subscriptions, err error) {
 	c := colly.NewCollector()
 
 	// authenticate
@@ -51,7 +61,7 @@ func ParseSubscription(username string, password string) (subscriptions []Subscr
 	})
 
 	// start scraping
-	err = c.Visit(previewURL)
+	err = c.Visit(url)
 	if err != nil {
 		log.Fatal(err)
 	}
