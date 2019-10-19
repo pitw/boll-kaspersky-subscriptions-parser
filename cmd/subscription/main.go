@@ -10,12 +10,17 @@ func main() {
 	var filename string
 	var username string
 	var password string
+	var version bool
+	var format string
+
 	var clientid int
 
-	flag.StringVar(&filename, "filename", "KasperksySubscriptions", "Name of exported CSV (without ending)")
+	flag.StringVar(&format, "format", "csv", "Format (csv,json,xls)")
+	flag.StringVar(&filename, "filename", "KasperskySubscriptions", "Name of exported file")
 	flag.StringVar(&username, "username", "", "Username for Boll.ch")
 	flag.StringVar(&password, "password", "", "Password for Boll.ch")
-	flag.IntVar(&clientid, "client", 0, "ID of Client")
+	flag.BoolVar(&version, "version", false, "Shows version")
+	flag.IntVar(&clientid, "client", 0, "ID of Subscription - Client")
 
 	flag.Parse()
 

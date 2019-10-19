@@ -40,3 +40,24 @@ directly as:
 - CSV
 - JSON
 - XLS
+
+
+### Help
+
+Can be showed with param -h
+
+```
+  -client int
+        ID of Subscription - Client
+  -filename string
+        Name of exported file (default "KasperskySubscriptions")
+  -format string
+        Format (csv,json,xls) (default "csv")
+  -password string
+        Password for Boll.ch
+  -username string
+        Username for Boll.ch
+  -version
+        Shows version    
+```
+       
