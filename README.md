@@ -39,7 +39,6 @@ directly as:
 
 - CSV
 - JSON
-- XLS
 
 
 ### Help
@@ -52,7 +51,7 @@ Can be showed with param -h
   -filename string
         Name of exported file (default "KasperskySubscriptions")
   -format string
-        Format (csv,json,xls) (default "csv")
+        Format (csv,json) (default "csv")
   -password string
         Password for Boll.ch
   -username string

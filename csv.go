@@ -18,6 +18,10 @@ func WriteCSV(subscriptions []Subscriptions, filename string) (err error) {
 	w := csv.NewWriter(file)
 	defer w.Flush()
 
+	headerLine := []string{"Subscriber", "Menge", "Artikelnr", "Artikel", "Endkunden-Preis"}
+	if err := w.Write(headerLine); err != nil {
+		log.Fatalln("error writing record to csv:", err)
+	}
 	for _, record := range subscriptions {
 		line := []string{}
 		for _, products := range record.Products {

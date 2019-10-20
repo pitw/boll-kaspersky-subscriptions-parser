@@ -15,7 +15,7 @@ func main() {
 
 	var clientid int
 
-	flag.StringVar(&format, "format", "csv", "Format (csv,json,xls)")
+	flag.StringVar(&format, "format", "csv", "Format of file (csv,json)")
 	flag.StringVar(&filename, "filename", "KasperskySubscriptions", "Name of exported file")
 	flag.StringVar(&username, "username", "", "Username for Boll.ch")
 	flag.StringVar(&password, "password", "", "Password for Boll.ch")
@@ -84,18 +84,17 @@ func WriteSubscriptionClientCSV(username string, password string, filename strin
 }
 
 // WriteSubscriptionsJSON parses a all Boll Kaspersky Subscription to CSV
-func WriteSubscriptionsJSON(username string, password string, filename string) (err error) {
+func WriteSubscriptionsJSON(username string, password string, filename string) {
 	subsc, err := subscriptionparser.ParseSubscriptions(username, password)
 	if err != nil {
-		return err
+		fmt.Println(err)
 	}
 	err = subscriptionparser.WriteJSON(subsc, filename)
 	if err != nil {
-		return err
+		fmt.Println(err)
 	} else {
 		fmt.Printf("JSON written to %v", filename)
 	}
-	return err
 }
 
 // WriteSubscriptionClientJSON parses a all Boll Kaspersky Subscription to CSV

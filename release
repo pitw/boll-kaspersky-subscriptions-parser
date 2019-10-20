@@ -13,7 +13,7 @@ chmod +x docker/subscription
 ghr $(cat .ghr) bin/
 
 # docker build
-export IMAGE_NAME="pitw/boll-kaspersky-subscriptions"
+export IMAGE_NAME="pitwch/boll-kaspersky-subscriptions"
 export IMAGE_NAME_VERSION="$IMAGE_NAME:$VERSION"
 
 docker build -t $IMAGE_NAME_VERSION .
