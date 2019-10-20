@@ -9,6 +9,10 @@
 
 Parsing Kaspersky Subscriptions directly from boll.ch
 
+- [Installation](#installation)
+- [Example](#example)
+- [CLI](#cli)
+- [Docker](#docker)
 
 ## Installation
 
@@ -16,7 +20,7 @@ Parsing Kaspersky Subscriptions directly from boll.ch
 go get https://github.com/pitw/boll-kaspersky-subscriptions-parser
 ```
 
-## Example
+### Example
 
 ```go
 func main() {
@@ -59,4 +63,12 @@ Can be showed with param -h
   -version
         Shows version    
 ```
-       
+
+## Docker
+
+CLI is also available as Docker Image.
+
+```
+docker pull pitwch/boll-kaspersky-subscriptions:latest
+```
+
