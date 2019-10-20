@@ -2,12 +2,11 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/pitw/boll-kaspersky-subscriptions-parser)](https://goreportcard.com/report/github.com/pitw/boll-kaspersky-subscriptions-parser)
 [![Build Status](https://travis-ci.org/pitwch/go-wrapper-proffix-restapi.svg?branch=master)](https://travis-ci.org/pitw/boll-kaspersky-subscriptions-parser)
 [![GoDoc](https://godoc.org/github.com/pitw/boll-kaspersky-subscriptions-parser?status.svg)](https://godoc.org/github.com/pitw/boll-kaspersky-subscriptions-parser)
-[![codecov](https://codecov.io/gh/pitw/boll-kaspersky-subscriptions-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/pitw/boll-kaspersky-subscriptions-parser)
 [![GitHub license](https://img.shields.io/github/license/pitw/boll-kaspersky-subscriptions-parser.svg)](https://github.com/pitw/boll-kaspersky-subscriptions-parser/blob/master/LICENSE)
 
 # Boll Kaspersky Subscriptions Parser
 
-Parsing Kaspersky Subscriptions directly from boll.ch
+Golang Library for parsing Kaspersky Subscriptions directly from [Boll.ch](https://www.boll.ch/kaspersky/subscriptions_faq.html)
 
 - [Installation](#installation)
 - [Example](#example)
@@ -43,6 +42,17 @@ directly as:
 
 - CSV
 - JSON
+
+Latest version of CLI is always available in [Releases](https://github.com/pitw/boll-kaspersky-subscriptions-parser/releases/latest)
+
+Example:
+
+```
+subscription.exe -password 1234 -username test
+
+// Parses Subscriptions and downloads them as CSV
+```
+
 
 
 ### Help
