@@ -33,7 +33,7 @@ func main() {
 	fmt.Print(subscriptions)
 }
 ```
-
+Detailed docs available in [GoDoc](https://godoc.org/github.com/pitw/boll-kaspersky-subscriptions-parser)
 
 ## CLI
 
