@@ -35,9 +35,9 @@ func main() {
 ```
 Detailed docs available in [GoDoc](https://godoc.org/github.com/pitw/boll-kaspersky-subscriptions-parser)
 
-## CLI
+## CLI :computer: 
 
-Also included is a small :computer: CLI for getting subscriptions
+Also included is a small CLI for getting subscriptions
 directly as:
 
 - CSV
@@ -57,9 +57,12 @@ subscription.exe -password 1234 -username test
 
 ### Help
 
-Can be showed with param -h
+Can be viewed with param -h
 
 ```
+subscription.exe -h
+
+
   -client int
         ID of Subscription - Client
   -filename string
@@ -74,7 +77,7 @@ Can be showed with param -h
         Shows version    
 ```
 
-## Docker
+## Docker :whale2:
 
 CLI is also available as [Docker Image](https://hub.docker.com/r/pitwch/boll-kaspersky-subscriptions).
 
