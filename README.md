@@ -10,8 +10,8 @@ Golang Library for parsing Kaspersky Subscriptions directly from [Boll.ch](https
 
 - [Installation](#installation)
 - [Example](#example)
-- [CLI](#cli)
-- [Docker](#docker)
+- [CLI :computer: ](#cli)
+- [Docker :whale2:](#docker)
 
 ## Installation
 
@@ -35,9 +35,9 @@ func main() {
 ```
 Detailed docs available in [GoDoc](https://godoc.org/github.com/pitw/boll-kaspersky-subscriptions-parser)
 
-## CLI :computer: 
+## CLI
 
-Also included is a small CLI for getting subscriptions
+Also included is a small :computer:  CLI for getting subscriptions
 directly as:
 
 - CSV
@@ -77,9 +77,9 @@ subscription.exe -h
         Shows version    
 ```
 
-## Docker :whale2:
+## Docker
 
-CLI is also available as [Docker Image](https://hub.docker.com/r/pitwch/boll-kaspersky-subscriptions).
+CLI is also available as :whale2: [Docker Image](https://hub.docker.com/r/pitwch/boll-kaspersky-subscriptions).
 
 ```
 docker pull pitwch/boll-kaspersky-subscriptions:latest
