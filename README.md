@@ -37,7 +37,7 @@ Detailed docs available in [GoDoc](https://godoc.org/github.com/pitw/boll-kasper
 
 ## CLI
 
-Also included is a small CLI for getting subscriptions
+Also included is a small :computer: CLI for getting subscriptions
 directly as:
 
 - CSV
@@ -76,7 +76,7 @@ Can be showed with param -h
 
 ## Docker
 
-CLI is also available as Docker Image.
+CLI is also available as [Docker Image](https://hub.docker.com/r/pitwch/boll-kaspersky-subscriptions).
 
 ```
 docker pull pitwch/boll-kaspersky-subscriptions:latest
